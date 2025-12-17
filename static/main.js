@@ -1,5 +1,5 @@
 const form = document.getElementById("bookForm")
-const giftsContainer = document.getElementById("book");
+const booksContainer = document.getElementById("book");
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -8,7 +8,7 @@ form.addEventListener("submit", (event) => {
     const book = form.elements.book.value;
 
     const item = document.createElement("p");
-    item.textContent = `Book for ${name}: ${book}`;
+    item.textContent = `Book suggested by ${name}: ${book}`;
     booksContainer.appendChild(item);
 
     form.reset();

@@ -1,5 +1,5 @@
 const form = document.getElementById("bookForm")
-const giftsContainer = document.getElementById("books");
+const giftsContainer = document.getElementById("book");
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();

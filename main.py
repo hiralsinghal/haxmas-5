@@ -1,11 +1,21 @@
 import flask
 import sqlite3
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
 
 app = flask.Flask(
     __name__,
     static_folder="static",
     static_url_path="/"
 )
+
+limiter = Limiter(
+    get_remote_address,
+    app=app,
+    default_limits=["200 per day"],
+    storage_uri="memory://",
+)
+
 conn = sqlite3.connect('books.db') 
 cursor = conn.cursor()  
 cursor.execute('''
@@ -19,6 +29,7 @@ conn.commit()
 conn.close()
 
 @app.get("/")
+@limiter.exempt
 def index():
     return flask.send_from_directory("static", "index.html")
 
@@ -49,3 +60,5 @@ def get_books():
 
 if __name__ == "__main__":
     app.run()
+
+

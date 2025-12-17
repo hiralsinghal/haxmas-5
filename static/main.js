@@ -1,15 +1,15 @@
-const form = document.getElementById("giftForm")
-const giftsContainer = document.getElementById("gifts");
+const form = document.getElementById("bookForm")
+const giftsContainer = document.getElementById("books");
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
 
     const name = form.elements.name.value;
-    const gift = form.elements.gift.value;
+    const book = form.elements.book.value;
 
     const item = document.createElement("p");
-    item.textContent = `Gift for ${name}: ${gift}`;
-    giftsContainer.appendChild(item);
+    item.textContent = `Book for ${name}: ${book}`;
+    booksContainer.appendChild(item);
 
     form.reset();
 })

@@ -19,7 +19,7 @@ limiter = Limiter(
 conn = sqlite3.connect('books.db') 
 cursor = conn.cursor()  
 cursor.execute('''
-    CREATE TABLE IF NOT EXISTS gifts (
+    CREATE TABLE IF NOT EXISTS books (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT NOT NULL,
         book TEXT NOT NULL

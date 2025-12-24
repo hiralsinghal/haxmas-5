@@ -1,7 +1,7 @@
 const form = document.getElementById("bookForm")
 const booksContainer = document.getElementById("book");
 
-async function loadGifts() {
+async function loadBooks() {
     const response = await fetch('/books');
     const books = await response.json();
     

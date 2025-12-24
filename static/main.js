@@ -8,7 +8,7 @@ async function loadBooks() {
     booksContainer.innerHTML = '';
     books.forEach(book => {
         const item = document.createElement("p");
-        item.textContent = `Book suggested by ${name}: ${book.book}`;
+        item.textContent = `Book suggested by ${book.name}: ${book.book}`;
         booksContainer.appendChild(item);
     });
 }
